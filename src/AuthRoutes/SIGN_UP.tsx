@@ -70,8 +70,7 @@ const SIGN_UP = ({navigation}: Props): JSX.Element => {
 
         if (response && response.data && response.data.return === true) {
           navigation.navigate('OtpScreen', {
-            Item: ProfileData,
-            IS_REGISTERED: true,
+            ProfileData: ProfileData,
             OTP: OTP,
           });
           SetConfPass({...ConfPass, Loader: false});

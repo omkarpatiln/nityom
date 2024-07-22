@@ -15,7 +15,7 @@ import {useNavigation} from '@react-navigation/native';
 import {useSelector} from '../Modules';
 import Icon from './Icon';
 interface BottomTabProps {
-  selectedTab: 'Dashboard' | 'History' | 'RateUs' | 'Profile';
+  selectedTab: 'Dashboard' | 'Profile';
 }
 const BottomTab: React.FC<BottomTabProps> = ({selectedTab}) => {
   const navigation = useNavigation();
@@ -60,58 +60,6 @@ const BottomTab: React.FC<BottomTabProps> = ({selectedTab}) => {
         </View>
         <Text style={[Styles.label]}>{'Dashboard'}</Text>
       </TouchableOpacity>
-
-      {member.member.IS_ACTIVE ? (
-        <TouchableOpacity
-          // @ts-ignore
-          onPress={() => navigation.navigate('RateUs')}
-          style={{flex: 1, alignItems: 'center', justifyContent: 'flex-end'}}>
-          <View style={[getStyle('RateUs')]}>
-            {selectedTab == 'RateUs' ? (
-              <Icon
-                color={Colors.STATUS_COLOR}
-                name="attach-money"
-                type="MaterialIcons"
-                size={20}
-              />
-            ) : (
-              <Icon
-                color={Colors.White}
-                name="attach-money"
-                type="MaterialIcons"
-                size={20}
-              />
-            )}
-          </View>
-          <Text style={[Styles.label]}>{'RateUs'}</Text>
-        </TouchableOpacity>
-      ) : null}
-
-      {member.member.IS_ACTIVE ? (
-        <TouchableOpacity
-          // @ts-ignore
-          onPress={() => navigation.navigate('History')}
-          style={{flex: 1, alignItems: 'center', justifyContent: 'flex-end'}}>
-          <View style={[getStyle('History')]}>
-            {selectedTab == 'History' ? (
-              <Icon
-                color={Colors.STATUS_COLOR}
-                name="history"
-                type="FontAwesome"
-                size={20}
-              />
-            ) : (
-              <Icon
-                color={Colors.White}
-                name="history"
-                type="FontAwesome"
-                size={20}
-              />
-            )}
-          </View>
-          <Text style={[Styles.label]}>{'History'}</Text>
-        </TouchableOpacity>
-      ) : null}
 
       <TouchableOpacity
         // @ts-ignore

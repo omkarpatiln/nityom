@@ -7,13 +7,7 @@ import {StatusBar} from 'react-native';
 import SIGN from './src/AuthRoutes/SIGN';
 
 const App = () => {
-  const {showSplashScreen} = useSelector(state => state.app);
-  const {Sizes, Colors, Fonts} = useSelector(state => state.app);
-
-  const {member} = useSelector(state => state.member);
-  useEffect(() => {
-    console.log('member.........................', member);
-  }, []);
+  const {Colors} = useSelector(state => state.app);
 
   return (
     <>
